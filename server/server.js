@@ -8,10 +8,10 @@ const app = express();
 const port = process.env.PORT || 4001
 
 const router = express.Router()
-//connecting to the database, in db.js file
+//MONGODB CONNECTION
 connectDB()
 
-//cors and http parser
+//MIDDLEWARE
 app.use(cors({
   origin: "https://localhost:3000",  
   methods: "GET,POST,PUT,DELETE",
@@ -21,7 +21,7 @@ app.use(cors({
 app.use(express.json());
 
 
-//basic routing
+//ROUTES
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
